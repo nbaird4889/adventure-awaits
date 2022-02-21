@@ -1,0 +1,466 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 15px 40px 15px 40px;
+}
+
+.nav-links {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.nav-link:hover {
+    color:#FB8500;
+}
+
+.nav-bullet {
+    transition: all .2s ease-in-out;
+}
+
+.nav-bullet:hover {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #023047;
+}
+
+.nav-header {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+}
+
+.nav-button {
+    padding: 5px 20px;
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    background-color: #FB8500;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+
+#sign-up-button {
+    background-color: #219EBC;
+}
+
+#sign-up-button:hover {
+    background-color:#023047;
+}
+
+.nav-button:hover {
+    background-color:#023047;
+    transform: scale(1.1);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  
+main {
+    flex: 1 0 auto;
+}
+  
+footer {
+    text-align: center;
+    background-color: #023047;
+    color: white;
+    padding: 40px;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 30px;
+}
+
+/* ========== HOMEPAGE ============== */
+
+.home {
+    background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645210774/seastheday/fernando-gomez-J_mMuJgNzeU-unsplash_wrymxa.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    
+}
+
+.home-details-container {
+    display: flex;
+    width: 32%;
+    float: right;
+}
+
+.home-details {
+    padding-right: 50px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.home-headline {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 70px;
+}
+
+.home-subhead {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 40px;
+}
+
+.home-copy {
+    font-family: 'Montserrat', sans-serif;
+    size: 24px;
+    padding-top: 30px;
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+.log-btn, .sign-btn {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.home-log, .home-sign {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    padding: 10px 50px;
+    border: none;
+    background-color: #FB8500;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.home-sign {
+    background-color: #219EBC
+}
+
+.home-log:hover, .home-sign:hover {
+    background-color: #023047;
+    transform: scale(1.2); 
+}
+
+/* =============== TRIPS PAGE ================== */
+
+.trip-headline {
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 44px;
+    padding-top: 40px;
+}
+
+.card-container {
+    text-align: center;
+    margin: 40px;
+    background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645220394/seastheday/sasha-freemind-cm0eSVxdLDg-unsplash_l3xyyv.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    height: 600px;
+    position: relative;
+}
+
+.card-content {
+margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.trip-name {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+.trip-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 0px 100px 30px 100px;
+}
+
+main {
+    background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645222154/seastheday/plane_gneb7q.png")
+}
+
+.trip-buttons {
+    padding: 5px 30px;
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    background-color: #FB8500;
+    color: white;
+    transition: all .2s ease-in-out;
+    margin-right: 40px;
+}
+
+.trip-buttons:hover {
+    background-color: #023047;
+    transform: scale(1.2); 
+}
+
+#delete {
+    background-color: #219EBC;
+}
+
+#delete:hover {
+    background-color: #023047;
+    transform: scale(1.2); 
+}
+
+#details {
+    background-color: #8ECAE6;
+}
+
+#details:hover {
+    background-color: #023047;
+    transform: scale(1.2); 
+}
+
+/* ==============TRIP FORM============== */
+
+.trip-form {
+    background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645210687/seastheday/pexels-aleksandar-pasaric-2498551_gt7yrv.jpg");
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+}
+
+.trip-form-fields {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #023047;
+    border-radius: 10px;
+    width: 600px;
+    height: 500px;
+}
+
+.trip-form-headline {
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 44px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+}
+
+label {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 10px;
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.trip-form-button-div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.trip-form-buttons {
+    border: none;
+    background-color:#FB8500;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    color: white;
+    transition: all .2s ease-in-out; 
+}
+
+.trip-form-buttons:hover {
+    transform: scale(1.1);
+    background-color: darkgray;
+}
+
+
+/* =======DELETE FORM======== */
+
+.delete-div {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #023047;
+    border-radius: 10px;
+    width: 600px;
+    height: 500px;
+    color: white;
+    text-align: center;
+}
+
+.delete-headline {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 44px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.delete-confirm {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+.btn {
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    transition: all .2s ease-in-out; 
+}
+
+.btn:hover {
+    background-color: red;
+    transform: scale(1.1);
+}
+
+.cancel {
+    padding: 10px 30px;
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    transition: all .2s ease-in-out; 
+}
+
+.cancel:hover {
+    transform: scale(1.1);
+    background-color:#FB8500;
+}
+
+.cancel-link {
+    text-decoration: none;
+    color: black;
+}
+
+.go-back-div {
+    text-align: center;
+}
+
+.go-back-link {
+    color: white;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+}
+
+.go-back-link:hover {
+    color:#FB8500
+}
+
+/* =======MY STOPS======= */
+
+.card-container-two {
+    text-align: center;
+    margin: 40px;
+    background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645231496/seastheday/city_hycka5.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    height: 300px;
+    position: relative;
+}
+
+.stop-name {
+    color: white;
+    transition: all .2s ease-in-out; 
+    font-family: 'Architects Daughter', cursive;
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+.stop-link {
+    text-decoration: none;
+}
+
+.add-stop-div {
+    text-align: center;
+    background-color: #023047;
+    margin: 20px 80px 20px 80px;
+}
+
+.stop-headline {
+    font-family: 'Architects Daughter', cursive;
+    font-size: 30px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    color:white;
+}
+
+.add-stop-button {
+    padding: 10px 30px;
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 20px;
+    transition: all .2s ease-in-out; 
+    background-color: #FB8500;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.add-stop-button:hover {
+    transform: scale(1.1);
+    background-color: darkgray;
+}
+
+.detail-button {
+    padding: 5px 30px;
+    border: none;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+    background-color:#8ECAE6;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.detail-button:hover {
+    transform: scale(1.1);
+    background-color:#023047;
+}
+
+
+/* =========ADD A STOP FORM========== */
+
+.trip-form-fields-two {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #023047;
+    border-radius: 10px;
+    width: 700px;
+    height: 550px;
+}

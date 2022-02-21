@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <title>Seas The Day</title>
+  </head>
+  <body>
+    <main class="trip-form">
+        
+        <div class="trip-form-fields">
+            {% if object %}
+            <h1 class="trip-form-headline">Edit {{object.name}}</span></h1>
+            {% else %}
+            <h1 class="trip-form-headline">Add Trip</h1>
+            {% endif %}
+        <form action="" method="post">
+          {% csrf_token %}
+          <table>
+            {{ form.as_table }}
+          </table>
+          <div class="trip-form-button-div">
+          {% if object %}
+          <input class="trip-form-buttons" type="submit" value="Edit Trip" />
+          {% else %}
+          <input class="trip-form-buttons" type="submit" value="Add Trip" />
+          <div class="go-back-div">
+          <a class="go-back-link" href="/trips/">Go Back</a>
+          </div>
+          {% endif %}
+          </div>
+        </form>
+    </div>
+    </main>
+  </body>
+</html>

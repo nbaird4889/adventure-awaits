@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+<div class="trip-background">
+
+<h1 class="trip-headline">My Trips</h1>
+
+{% for trip in trips %}
+<div class="card-container">
+  <div class="card-content">
+    <h2 class="trip-name"> {{trip.name}} </h2>
+    <h3 class="trip-date">This trip is scheduled from {{trip.start_date}} to {{trip.end_date}}</h3>
+    <div class="card-action">
+        <a href="{% url 'trips_update' trip.id %}"><button class="trip-buttons">Edit</button></a>
+        <a href="{% url 'trips_delete' trip.id %}"><button id="delete" class="trip-buttons">Delete</button></a>
+        <a href="{% url 'stops_index' trip.id%}"><button id="details" class="trip-buttons">Details</button></a>
+      </div>
+  </div>
+</div>
+</div>
+{% endfor %} {% endblock %}

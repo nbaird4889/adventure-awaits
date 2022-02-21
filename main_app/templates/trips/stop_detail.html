@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Stop Details</h1>
+   <h2> {{stop.city}} </h2>
+   <h3> {{stop.arrival}} </h3>
+   <h3> {{stop.departure}} </h3>
+   <li><a href="{% url 'stop_update' stop.id %}">Update Stop</a></li>
+   <li><a href="{% url 'stop_delete' stop.id %}">Delete Stop</a></li>
+
+   {% for restaurant in stop.restaurant_set.all %}
+        <tr>
+          <td>{{restaurant.name}}</td>
+        </tr>
+    {% endfor %}
+
+    <form action="{% url 'add_restaurant' stop.id %}" method="post">
+        {% csrf_token %} {{ restaurant_form.as_p }}
+        <input type="submit" class="btn" value="Add Restaurant" />
+    </form>
+
+{% endblock %}

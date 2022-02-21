@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="trip-headline">My Stops</h1>
+
+<div class="add-stop-div">
+    <h2 class = "stop-headline">Need to add a stop?</h2>
+    <a class="add-stop-link" href="{% url 'stop_create'%}"><button class="add-stop-button">Add a Stop</button></a>
+</div>
+
+{% for stop in stops %}
+<div class="card-container-two">
+    <div class="card-content">
+        <h2 class="stop-name"> {{stop.city}} </h2>
+        <a href="{% url 'stop_detail' stop.id%}"><button class="detail-button">Details</button></a>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
