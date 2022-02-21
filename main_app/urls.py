@@ -14,4 +14,5 @@ urlpatterns = [
     path('stops/<int:pk>/update/', views.StopUpdate.as_view(), name='stop_update'),
     path('stops/<int:pk>/delete/', views.StopDelete.as_view(), name='stop_delete'),
     path('stops/<int:stop_id>/add_restaurant/', views.add_restaurant, name='add_restaurant'),
+    path('stops/<int:stop_id>/add_travelto/', views.add_travelto, name='add_travelto'),
 ]

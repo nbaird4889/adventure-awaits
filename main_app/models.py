@@ -46,3 +46,36 @@ class TravelTo(models.Model):
 
     def __str__(self):
         return self.mode
+
+class TravelFrom(models.Model):
+    mode = models.CharField(max_length=50)
+    date = models.DateField('Travel Date')
+    departure_time = models.CharField(max_length=50)
+    arrival_time = models.CharField(max_length=50)
+    destination = models.CharField(max_length=50)
+
+    stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.destination
+
+class Activity(models.Model):
+    name = models.CharField(max_length=50)
+    date = models.DateField('Travel Date')
+    notes = models.TextField()
+
+    stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class Hotel(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=100)
+    confirmation_number = models.CharField(max_length=50)
+
+    stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name

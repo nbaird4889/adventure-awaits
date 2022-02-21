@@ -1,21 +1,88 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Stop Details</h1>
-   <h2> {{stop.city}} </h2>
-   <h3> {{stop.arrival}} </h3>
-   <h3> {{stop.departure}} </h3>
-   <li><a href="{% url 'stop_update' stop.id %}">Update Stop</a></li>
-   <li><a href="{% url 'stop_delete' stop.id %}">Delete Stop</a></li>
+<h1 class="trip-headline">Stop Details</h1>
+    <div class="stop-details">
+        <h2 class="stop-detail-headline"> You're going to {{stop.city}} </h2>
+        <h3 class="stop-detail-dates"> From {{stop.arrival}} to {{stop.departure}} </h3>
+        <a href="{% url 'stop_update' stop.id %}"><button class="stop-detail-buttons">Update Stop</button></a>
+        <a href="{% url 'stop_delete' stop.id %}"><button class="stop-detail-buttons">Delete Stop</button></a>
+    </div>
 
-   {% for restaurant in stop.restaurant_set.all %}
-        <tr>
-          <td>{{restaurant.name}}</td>
-        </tr>
-    {% endfor %}
+<div class="details-div">
+   <div class="travelto-div">
+       <h2 class="stop-detail-headline">Travel Arrival Details</h2>
+       {% for travelto in stop.travelto_set.all %}
+        
+        <h3 class="travel-details">Mode: {{travelto.mode}}</h3>
+        <h3 class="travel-details">Date: {{travelto.date}}</h3>
+        <h3 class="travel-details">Departure Time: {{travelto.departure_time}}</h3>
+        <h3 class="travel-details">Arrival Time: {{travelto.arrival_time}}</h3>
+        
+        {% endfor %}    
+    </div>
+
+
+   <div class="hotel-div">
+    <h2 class="stop-detail-headline">Hotel Details</h2>
+    {% for hotel in stop.hotel_set.all %}
+     
+     <h3 class="travel-details">Name: {{hotel.name}}</h3>
+     <h3 class="travel-details">Address: {{hotel.address}}</h3>
+     <h3 class="travel-details">Confirmation Number: {{hotel.confirmation_number}}</h3>
+     
+     {% endfor %}    
+    </div>
+
+
+   <div class="restaurant-div">
+    <h2 class="stop-detail-headline">Restaurant Details</h2>
+    {% for restaurant in stop.restaurant_set.all %}
+     
+    <div class="each-detail">
+     <h3 class="travel-details">Name: {{restaurant.name}}</h3>
+     <h3 class="travel-details">Date: {{restaurant.date}}</h3>
+     <h3 class="travel-details">Time: {{restaurant.time}}</h3>
+     <h3 class="travel-details">Address: {{restaurant.address}}</h3>
+    </div>
+     
+     {% endfor %}    
+    </div>
+
+    <div class="activity-div">
+        <h2 class="stop-detail-headline">Activity Details</h2>
+        {% for activity in stop.activity_set.all %}
+         
+         <h3 class="travel-details">Name: {{activity.name}}</h3>
+         <h3 class="travel-details">Date: {{activity.date}}</h3>
+         <h3 class="travel-details">Notes: {{activity.notes}}</h3>
+         
+         {% endfor %}    
+    </div>
+
+    <div class="travelfrom-div">
+        <h2 class="stop-detail-headline">Travel Departure Details</h2>
+        {% for travelfrom in stop.travelfrom_set.all %}
+         
+        <h3 class="travel-details">Mode: {{travelfrom.mode}}</h3>
+        <h3 class="travel-details">Date: {{travelfrom.date}}</h3>
+        <h3 class="travel-details">Departure Time: {{travelfrom.departure_time}}</h3>
+        <h3 class="travel-details">Arrival Time: {{travelfrom.arrival_time}}</h3>
+        <h3 class="travel-details">Destination: {{travelfrom.destination}}</h3>
+         
+         {% endfor %}    
+    </div>
+</div>
+
 
     <form action="{% url 'add_restaurant' stop.id %}" method="post">
         {% csrf_token %} {{ restaurant_form.as_p }}
         <input type="submit" class="btn" value="Add Restaurant" />
     </form>
+
+    <form action="{% url 'add_travelto' stop.id %}" method="post">
+        {% csrf_token %} {{ travelto_form.as_p }}
+        <input type="submit" class="btn" value="Add Travel to Destination" />
+    </form>
+
 
 {% endblock %}

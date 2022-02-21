@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Stop, Trips, Restaurant
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import RestaurantForm
+from .forms import RestaurantForm, TravelToForm
 
 # Create your views here.
 def home(request):
@@ -34,7 +34,8 @@ def stops_index(request, trip_id):
 def stop_detail(request, stop_id):
     stop = Stop.objects.get(id=stop_id)
     restaurant_form = RestaurantForm()
-    return render(request, 'trips/stop_detail.html', {'stop': stop, 'restaurant_form': restaurant_form})
+    travelto_form = TravelToForm()
+    return render(request, 'trips/stop_detail.html', {'stop': stop, 'restaurant_form': restaurant_form, 'travelto_form': travelto_form})
 
 class StopCreate(CreateView):
     model = Stop
@@ -57,4 +58,12 @@ def add_restaurant(request, stop_id):
     new_restaurant = form.save(commit=False)
     new_restaurant.stop_id = stop_id
     new_restaurant.save()
+  return redirect('stop_detail', stop_id=stop_id)
+
+def add_travelto(request, stop_id):
+  form = TravelToForm(request.POST)
+  if form.is_valid():
+    new_travelto = form.save(commit=False)
+    new_travelto.stop_id = stop_id
+    new_travelto.save()
   return redirect('stop_detail', stop_id=stop_id)
