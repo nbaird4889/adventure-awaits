@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Restaurant, TravelTo
+from .models import Restaurant, TravelTo, Hotel
 
 class RestaurantForm(ModelForm):
   class Meta:
@@ -10,3 +10,8 @@ class TravelToForm(ModelForm):
   class Meta:
     model = TravelTo
     fields = ['mode', 'date', 'departure_time', 'arrival_time']
+
+class HotelForm(ModelForm):
+  class Meta:
+    model = Hotel
+    fields = ['name', 'address', 'confirmation_number']

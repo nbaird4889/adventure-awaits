@@ -73,16 +73,21 @@
     </div>
 </div>
 
+    <form action="{% url 'add_travelto' stop.id %}" method="post">
+        {% csrf_token %} {{ travelto_form.as_p }}
+        <input type="submit" class="btn" value="Add Travel to Destination" />
+    </form>
+
+    <form action="{% url 'add_hotel' stop.id %}" method="post">
+        {% csrf_token %} {{ hotel_form.as_p }}
+        <input type="submit" class="btn" value="Add Hotel" />
+    </form>
 
     <form action="{% url 'add_restaurant' stop.id %}" method="post">
         {% csrf_token %} {{ restaurant_form.as_p }}
         <input type="submit" class="btn" value="Add Restaurant" />
     </form>
 
-    <form action="{% url 'add_travelto' stop.id %}" method="post">
-        {% csrf_token %} {{ travelto_form.as_p }}
-        <input type="submit" class="btn" value="Add Travel to Destination" />
-    </form>
 
 
 {% endblock %}
