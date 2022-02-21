@@ -16,6 +16,8 @@ urlpatterns = [
     path('stops/<int:stop_id>/add_restaurant/', views.add_restaurant, name='add_restaurant'),
     path('stops/<int:stop_id>/add_travelto/', views.add_travelto, name='add_travelto'),
     path('stops/<int:stop_id>/add_hotel/', views.add_hotel, name='add_hotel'),
+    path('stops/<int:stop_id>/add_activity/', views.add_activity, name='add_activity'),
+    path('stops/<int:stop_id>/add_travelfrom/', views.add_travelfrom, name='add_travelfrom'),
 ]
 
 

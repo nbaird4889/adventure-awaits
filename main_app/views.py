@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Stop, Trips
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .forms import RestaurantForm, TravelToForm, HotelForm
+from .forms import RestaurantForm, TravelFromForm, TravelToForm, HotelForm, ActivityForm
 
 # Create your views here.
 def home(request):
@@ -36,7 +36,9 @@ def stop_detail(request, stop_id):
     restaurant_form = RestaurantForm()
     travelto_form = TravelToForm()
     hotel_form = HotelForm()
-    return render(request, 'trips/stop_detail.html', {'stop': stop, 'restaurant_form': restaurant_form, 'travelto_form': travelto_form, 'hotel_form': hotel_form})
+    activity_form = ActivityForm()
+    travelfrom_form = TravelFromForm
+    return render(request, 'trips/stop_detail.html', {'stop': stop, 'restaurant_form': restaurant_form, 'travelto_form': travelto_form, 'hotel_form': hotel_form, 'activity_form': activity_form, 'travelfrom_form': travelfrom_form})
 
 class StopCreate(CreateView):
     model = Stop
@@ -75,4 +77,20 @@ def add_hotel(request, stop_id):
     new_hotel = form.save(commit=False)
     new_hotel.stop_id = stop_id
     new_hotel.save()
+  return redirect('stop_detail', stop_id=stop_id)
+
+def add_activity(request, stop_id):
+  form = ActivityForm(request.POST)
+  if form.is_valid():
+    new_activity = form.save(commit=False)
+    new_activity.stop_id = stop_id
+    new_activity.save()
+  return redirect('stop_detail', stop_id=stop_id)
+
+def add_travelfrom(request, stop_id):
+  form = TravelFromForm(request.POST)
+  if form.is_valid():
+    new_travelfrom = form.save(commit=False)
+    new_travelfrom.stop_id = stop_id
+    new_travelfrom.save()
   return redirect('stop_detail', stop_id=stop_id)

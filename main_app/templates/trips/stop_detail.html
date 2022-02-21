@@ -88,6 +88,17 @@
         <input type="submit" class="btn" value="Add Restaurant" />
     </form>
 
+    <form action="{% url 'add_activity' stop.id %}" method="post">
+        {% csrf_token %} {{ activity_form.as_p }}
+        <input type="submit" class="btn" value="Add Activity" />
+    </form>
+
+    <form action="{% url 'add_travelfrom' stop.id %}" method="post">
+        {% csrf_token %} {{ travelfrom_form.as_p }}
+        <input type="submit" class="btn" value="Add Travel from Destination" />
+    </form>
+
+
 
 
 {% endblock %}
