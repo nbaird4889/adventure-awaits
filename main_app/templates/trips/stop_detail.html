@@ -73,31 +73,55 @@
     </div>
 </div>
 
+<div class="stop-form-divs">
+    <h2 class="trip-headline" id="stop-detail-headline">Need to add a Stop detail?</h2>
+    <div class="stop-forms-div">
+    <div>        
     <form action="{% url 'add_travelto' stop.id %}" method="post">
         {% csrf_token %} {{ travelto_form.as_p }}
-        <input type="submit" class="btn" value="Add Travel to Destination" />
+        <div class="forms-buttons">
+        <input type="submit" class="btn" id="form-button" value="Add Travel to Destination" />
+        </div>
     </form>
+    </div>
 
+    <div>    
     <form action="{% url 'add_hotel' stop.id %}" method="post">
         {% csrf_token %} {{ hotel_form.as_p }}
-        <input type="submit" class="btn" value="Add Hotel" />
+        <div class="forms-buttons">
+        <input type="submit" class="btn" id="form-button" value="Add Hotel" />
+        </div>
     </form>
+    </div>
 
+    <div>
     <form action="{% url 'add_restaurant' stop.id %}" method="post">
         {% csrf_token %} {{ restaurant_form.as_p }}
-        <input type="submit" class="btn" value="Add Restaurant" />
+        <div class="forms-buttons">
+        <input type="submit" class="btn" id="form-button" value="Add Restaurant" />
+        </div>
     </form>
+    </div>
 
+    <div>
     <form action="{% url 'add_activity' stop.id %}" method="post">
         {% csrf_token %} {{ activity_form.as_p }}
-        <input type="submit" class="btn" value="Add Activity" />
+        <div class="forms-buttons">
+        <input type="submit" class="btn" id="form-button" value="Add Activity" />
+        </div>
     </form>
+    </div>
 
+    <div>
     <form action="{% url 'add_travelfrom' stop.id %}" method="post">
         {% csrf_token %} {{ travelfrom_form.as_p }}
-        <input type="submit" class="btn" value="Add Travel from Destination" />
+        <div class="forms-buttons">
+        <input type="submit" class="btn" id="form-button" value="Add Travel from Destination" />
+        </div>
     </form>
-
+    </div>
+</div>
+</div>
 
 
 

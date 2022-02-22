@@ -572,3 +572,32 @@ input {
 .each-detail {
     margin-bottom: 35px;
 }
+
+.stop-form-divs {
+    background-color:#FB8500;
+    margin-top: 80px;
+}
+
+#stop-detail-headline {
+    color: white;
+    padding-bottom: 40px;
+}
+
+.stop-forms-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 60px;
+    grid-row-gap: 40px;
+    color: white;
+    margin: 15px 80px 15px 80px;
+}
+
+.forms-buttons {
+    text-align: center;
+}
+
+#form-button {
+    background-color: #023047;
+    color: white;
+}
