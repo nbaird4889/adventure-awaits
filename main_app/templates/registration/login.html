@@ -9,9 +9,9 @@
     <title>Seas The Day</title>
   </head>
   <body>
-    <main class="trip-form">
+    <main class="register-form">
         
-        <div class="trip-form-fields">
+        <div class="trip-form-fields" id="login">
             <h1 class="trip-form-headline">Login</span></h1>
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %} {{ form.as_p }}

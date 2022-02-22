@@ -28,7 +28,7 @@ class TripsCreate(LoginRequiredMixin, CreateView):
 
 class TripsUpdate(LoginRequiredMixin, UpdateView):
   model = Trips
-  fields = '__all__'
+  fields = ['name', 'start_date', 'end_date']
 
 class TripsDelete(LoginRequiredMixin, DeleteView):
   model = Trips

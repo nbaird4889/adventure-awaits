@@ -608,8 +608,27 @@ input {
 }
 
 #signup {
-    width: 800px;
+    position: absolute;
+    left: 49%;
+    top: 40%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #023047;
+    border-radius: 10px;
+    width: 750px;
     height: 650px;
+}
+
+#login {
+    position: absolute;
+    left: 49%;
+    top: 38%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #023047;
+    border-radius: 10px;
+    width: 700px;
+    height: 500px;
 }
 
 #login-button {
@@ -640,4 +659,14 @@ input {
 
 .trip-form-fields ul {
     margin-bottom: 30px;
+}
+
+.register-form {
+        background-image: url("https://res.cloudinary.com/dhbumhhh1/image/upload/v1645210687/seastheday/johannes-hofmann-isKo2tLJHfA-unsplash_bkewqc.jpg");
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        color: white;
 }
