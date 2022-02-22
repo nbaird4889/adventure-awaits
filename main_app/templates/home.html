@@ -19,11 +19,11 @@
                     Already a member? Just log-in to view your trips. Of if you’re new to SeasTheDay it’s easy to create an account - just click sign-up!
                 </p>
                 <div class="log-btn">
-                <button class="home-log">Login</button>
+                <a href="{% url 'login' %}"><button class="home-log">Login</button></a>
                 </div>
 
                 <div class="sign-btn">
-                <button class="home-sign">Sign up</button>
+                <a href="{% url 'signup' %}"><button class="home-sign">Sign up</button></a>
                 </div>
             </div>
         </div>

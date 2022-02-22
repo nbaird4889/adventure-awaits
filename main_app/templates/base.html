@@ -14,11 +14,15 @@
           <h1 class="nav-header">SeasTheDay</h1>
         <div>
           <ul class="nav-links">
-            <li class="nav-bullet"><a class="nav-link" href="{% url 'home' %}"> Home</a></li>
+              <li class="nav-bullet"><a class="nav-link" href="{% url 'home' %}"> Home</a></li>
+              {% if user.is_authenticated %}
             <li class="nav-bullet"><a class="nav-link" href="{% url 'index' %}"> My Trips</a></li>
             <li class="nav-bullet"><a class="nav-link" href="{% url 'trips_create' %}">Add a Trip</a></li>
-            <li class="nav-bullet"><a href="/login"><button class="nav-button">Login</button></a></li>
-            <li class="nav-bullet"><a href="/signup"><button class="nav-button" id="sign-up-button">Sign Up</button></a></li>
+            <li class="nav-bullet"><a class="nav-link" href="{% url 'logout' %}"><button class="nav-button">Logout</button></a></li>
+            {% else %}
+            <li class="nav-bullet"><a href="{% url 'login' %}"><button class="nav-button">Login</button></a></li>
+            <li class="nav-bullet"><a href="{% url 'signup' %}"><button class="nav-button" id="sign-up-button">Sign Up</button></a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>

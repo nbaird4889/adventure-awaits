@@ -259,7 +259,7 @@ main {
     background-color: #023047;
     border-radius: 10px;
     width: 600px;
-    height: 500px;
+    height: 550px;
 }
 
 .trip-form-headline {
@@ -367,6 +367,7 @@ input {
 
 .go-back-div {
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .go-back-link {
@@ -600,4 +601,22 @@ input {
 #form-button {
     background-color: #023047;
     color: white;
+}
+
+#form-button:hover {
+    background-color: darkgray
+}
+
+#signup {
+    width: 1000px;
+    height: 600px;
+}
+
+#login-button {
+    background-color: #FB8500;
+    color: white;
+}
+
+#login-button:hover {
+    background-color: darkgray;
 }

@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Trips(models.Model):
@@ -7,11 +9,14 @@ class Trips(models.Model):
     start_date = models.DateField('Start Date')
     end_date = models.DateField('End Date')
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     def get_absolute_url(self):
         return reverse('index')
 
     def __str__(self):
         return self.name
+    
 
 class Stop(models.Model):
     city = models.CharField(max_length=50)
