@@ -608,8 +608,8 @@ input {
 }
 
 #signup {
-    width: 1000px;
-    height: 600px;
+    width: 800px;
+    height: 650px;
 }
 
 #login-button {
@@ -619,4 +619,25 @@ input {
 
 #login-button:hover {
     background-color: darkgray;
+}
+
+.helptext {
+    display: block;
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: darkgray;
+    margin-bottom: 20px; 
+}
+
+.trip-form-fields li {
+    padding-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: darkgray;
+    margin-bottom: 5px; 
+}
+
+.trip-form-fields ul {
+    margin-bottom: 30px;
 }

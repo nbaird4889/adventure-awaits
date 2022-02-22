@@ -16,8 +16,8 @@
             <h1 class="trip-form-headline">Sign Up</span></h1>
             <form method="post" action="{% url 'signup' %}">
                 {% csrf_token %} {{ form.as_p }}
-                <div class=>
-                <input type="submit" class="btn" value="signup" />
+                <div class="forms-buttons">
+                <input type="submit" class="btn" id="login-button" value="signup" />
                 <div>
               </form>
         </div>
