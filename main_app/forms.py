@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from .models import Restaurant, TravelTo, Hotel, Activity, TravelFrom
 
+
 class RestaurantForm(ModelForm):
   class Meta:
     model = Restaurant

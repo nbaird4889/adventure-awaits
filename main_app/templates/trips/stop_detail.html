@@ -56,7 +56,9 @@
          <h3 class="travel-details">Date: {{activity.date}}</h3>
          <h3 class="travel-details">Notes: {{activity.notes}}</h3>
          
-         {% endfor %}    
+         {% endfor %}  
+         <a href="{% url 'delete_activity' stop.id %}"><button id="delete" class="trip-buttons">Delete</button></a>
+
     </div>
 
     <div class="travelfrom-div">
@@ -76,7 +78,7 @@
 <div class="stop-form-divs">
     <h2 class="trip-headline" id="stop-detail-headline">Need to add a Stop detail?</h2>
     <div class="stop-forms-div">
-    <div>        
+    <div class="center-form">        
     <form action="{% url 'add_travelto' stop.id %}" method="post">
         {% csrf_token %} {{ travelto_form.as_p }}
         <div class="forms-buttons">
@@ -85,7 +87,7 @@
     </form>
     </div>
 
-    <div>    
+    <div class="center-form">    
     <form action="{% url 'add_hotel' stop.id %}" method="post">
         {% csrf_token %} {{ hotel_form.as_p }}
         <div class="forms-buttons">
@@ -94,7 +96,7 @@
     </form>
     </div>
 
-    <div>
+    <div class="center-form">
     <form action="{% url 'add_restaurant' stop.id %}" method="post">
         {% csrf_token %} {{ restaurant_form.as_p }}
         <div class="forms-buttons">
@@ -103,7 +105,7 @@
     </form>
     </div>
 
-    <div>
+    <div class="center-form">
     <form action="{% url 'add_activity' stop.id %}" method="post">
         {% csrf_token %} {{ activity_form.as_p }}
         <div class="forms-buttons">
@@ -112,7 +114,7 @@
     </form>
     </div>
 
-    <div>
+    <div class="center-form">
     <form action="{% url 'add_travelfrom' stop.id %}" method="post">
         {% csrf_token %} {{ travelfrom_form.as_p }}
         <div class="forms-buttons">
@@ -122,7 +124,5 @@
     </div>
 </div>
 </div>
-
-
 
 {% endblock %}

@@ -1,7 +1,9 @@
-from django.shortcuts import render, redirect
-from .models import Stop, Trips
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Stop, Trips, Activity
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .forms import RestaurantForm, TravelFromForm, TravelToForm, HotelForm, ActivityForm
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -105,6 +107,13 @@ def add_activity(request, stop_id):
     new_activity.stop_id = stop_id
     new_activity.save()
   return redirect('stop_detail', stop_id=stop_id)
+
+# @login_required
+# def delete_activity(request, stop_id):
+#     activities = Activity.objects.filter(stop_id=stop_id)
+#     activities.delete()
+#     return render(request, 'main_app/delete_activity', {'activities': activities})
+
 
 @login_required
 def add_travelfrom(request, stop_id):

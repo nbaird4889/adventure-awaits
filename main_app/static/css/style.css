@@ -670,3 +670,9 @@ input {
         background-size: cover;
         color: white;
 }
+
+.center-form {
+    text-align: center;
+}
+
+
