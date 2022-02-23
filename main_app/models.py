@@ -66,7 +66,7 @@ class TravelFrom(models.Model):
 
 class Activity(models.Model):
     name = models.CharField(max_length=50)
-    date = models.DateField('Travel Date')
+    date = models.DateField('Activity Date')
     notes = models.TextField()
 
     stop = models.ForeignKey(Stop, on_delete=models.CASCADE)
