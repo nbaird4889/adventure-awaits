@@ -10,7 +10,11 @@
 {% for stop in stops %}
 <div class="card-container-two">
     <div class="card-content">
+        {% if stop.city == "Nice" %}
         <h2 class="stop-name"> {{stop.city}} </h2>
+        {% else %}
+        <h2 class="stop-name"> "Other City" </h2>
+        {% endif %}
         <a href="{% url 'stop_detail' stop.id%}"><button class="detail-button">Details</button></a>
     </div>
 </div>
