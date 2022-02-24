@@ -710,7 +710,7 @@ input {
     }
 
     #login {
-        left: 43%;
+        left: 50%;
         top: 38%;
         width: 500px;
         height: 500px;
@@ -735,6 +735,36 @@ input {
 
     input {
         width: 300px;
+    }
+
+    #signup {
+        left: 50%;
+        top: 40%;
+        width: 500px;
+        height: 700px;
+        padding: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {  
+    #login {
+        left: 50%;
+        top: 38%;
+        width: 350px;
+        height: 500px;
+        text-align: center;
+    }
+
+    input {
+        width: 250px;
+    }
+
+    #signup {
+        left: 50%;
+        top: 40%;
+        width: 350px;
+        height: 700px;
+        padding: 40px;
     }
 }
 
