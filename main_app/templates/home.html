@@ -18,6 +18,11 @@
                     Keep all your travel information in one place for planning ease and quick reference while on the road. 
                     Already a member? Just log-in to view your trips. Of if you’re new to SeasTheDay it’s easy to create an account - just click sign-up!
                 </p>
+                {% if user.is_authenticated %}
+                <div class="log-btn">
+                  <a href="{% url 'index' %}"><button class="home-log">Go to My Trips</button></a>
+                </div>
+                {% else %}
                 <div class="log-btn">
                 <a href="{% url 'login' %}"><button class="home-log">Login</button></a>
                 </div>
@@ -25,6 +30,7 @@
                 <div class="sign-btn">
                 <a href="{% url 'signup' %}"><button class="home-sign">Sign up</button></a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </main>
